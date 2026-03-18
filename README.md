@@ -1,23 +1,86 @@
-Goals:
+Project Overview
 
-Email/password signup and login JWT access tokens (15 min expiry) Refresh tokens with rotation and reuse detection (7 day expiry) HttpOnly cookies for refresh token storage Google OAuth login Protected routes on both frontend and backend Logout with token revocation Basic rate limiting on auth routes Notes CRUD scoped to authenticated user AI endpoint to enhance/improve a note
+This is a full-stack notes application built with React, Node.js, Express, and MongoDB, focused on secure authentication and modern session management.
 
-Stack:
+The application uses JWT-based authentication with short-lived access tokens and rotating refresh tokens, along with Google OAuth login. Users can create, read, update, and delete personal notes, and enhance them using an AI-powered endpoint.
 
-Frontend: React, Axios (with interceptor) Backend: Node, Express Database: MongoDB, Mongoose Auth: jsonwebtoken, bcrypt, Google Auth Library AI: Claude or OpenAI API (called from backend only)
+Authentication Features
 
-Resources: JWT & Refresh Tokens
+Email/password signup and login
 
-JWT.io introduction — understand the token structure first Hasura blog on refresh token rotation — the best practical writeup on rotation + reuse detection
+JWT access tokens (15-minute expiry)
 
-Google OAuth
+Refresh tokens with:
 
-Google Identity: Verify ID tokens — backend verification approach Google Cloud Console — where you set up your OAuth credentials
+Rotation
 
-Express + MongoDB
+Reuse detection
 
-Mongoose docs — schemas, models, TTL indexes express-rate-limit — dead simple rate limiting
+7-day expiry
 
-Axios Interceptor (the tricky part)
+Refresh tokens stored in HttpOnly cookies
 
-Axios interceptors docs Search: "Axios refresh token interceptor 401 retry" — 
+Google OAuth login (backend ID token verification)
+
+Secure logout with token revocation
+
+Protected routes on frontend and backend
+
+Rate-limited authentication endpoints
+
+Core Features
+
+User-scoped Notes CRUD (Create, Read, Update, Delete)
+
+AI-powered endpoint to enhance or improve notes
+
+Persistent authentication with automatic token refresh
+
+Axios interceptor for handling expired tokens and retrying requests
+
+Tech Stack
+Frontend
+
+React
+
+Axios (with interceptors)
+
+Backend
+
+Node.js
+
+Express
+
+Database
+
+MongoDB
+
+Mongoose
+
+Authentication and Security
+
+jsonwebtoken
+
+bcrypt
+
+Google Auth Library
+
+express-rate-limit
+
+AI Integration
+
+OpenAI API or Claude API (called from backend only)
+
+Key Concepts Implemented
+
+JWT authentication flow
+
+Refresh token rotation and reuse detection
+
+HttpOnly cookie-based session handling
+
+OAuth 2.0 with Google Sign-In
+
+Secure API design with protected routes
+
+Token refresh handling using Axios interceptors
