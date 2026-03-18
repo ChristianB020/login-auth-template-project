@@ -1,16 +1,23 @@
-# React + Vite
+Goals:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Email/password signup and login JWT access tokens (15 min expiry) Refresh tokens with rotation and reuse detection (7 day expiry) HttpOnly cookies for refresh token storage Google OAuth login Protected routes on both frontend and backend Logout with token revocation Basic rate limiting on auth routes Notes CRUD scoped to authenticated user AI endpoint to enhance/improve a note
 
-Currently, two official plugins are available:
+Stack:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend: React, Axios (with interceptor) Backend: Node, Express Database: MongoDB, Mongoose Auth: jsonwebtoken, bcrypt, Google Auth Library AI: Claude or OpenAI API (called from backend only)
 
-## React Compiler
+Resources: JWT & Refresh Tokens
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+JWT.io introduction — understand the token structure first Hasura blog on refresh token rotation — the best practical writeup on rotation + reuse detection
 
-## Expanding the ESLint configuration
+Google OAuth
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Google Identity: Verify ID tokens — backend verification approach Google Cloud Console — where you set up your OAuth credentials
+
+Express + MongoDB
+
+Mongoose docs — schemas, models, TTL indexes express-rate-limit — dead simple rate limiting
+
+Axios Interceptor (the tricky part)
+
+Axios interceptors docs Search: "Axios refresh token interceptor 401 retry" — 
