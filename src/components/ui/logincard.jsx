@@ -11,11 +11,21 @@ import {
 } from "./card"
 import { Input } from "./input"
 import { Label } from "./label"
+import { useNavigate } from "react-router-dom";
+
 
 
 export function LoginCard() {
+
+  const navigate = useNavigate();
+const nav = () => {
+  navigate("Home-Screen")
+}
+
   return (
+    
     <div className="min-h-screen flex items-center justify-center">
+    
     <Card className="w-full max-w-sm mx-auto">
       <CardHeader>
         <CardTitle>Login to your account</CardTitle>
@@ -54,9 +64,11 @@ export function LoginCard() {
         </form>
       </CardContent>
       <CardFooter className="flex-col gap-2">
-        <Button type="submit" className="w-full -black">
-          Login
-        </Button>
+       
+       
+        <button onClick={nav}>Login</button>
+     
+        
         <Button variant="outline" className="w-full ">
           Login with Google
         </Button>

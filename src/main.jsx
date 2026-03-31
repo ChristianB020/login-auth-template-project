@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <LoginPage/>,
   }, 
   {
-    path: "./Home-Screen", 
+    path: "Home-Screen", 
     element: <App/>
   }
 ]);
